@@ -8,4 +8,5 @@ class usersViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView){
     val login = itemView.login
     val type = itemView.Type
     val image = itemView.avatarImage
+    val hidentext = itemView.hidenUrl
 }

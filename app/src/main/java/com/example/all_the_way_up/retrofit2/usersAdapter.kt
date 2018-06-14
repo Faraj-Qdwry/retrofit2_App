@@ -3,14 +3,12 @@ package com.example.all_the_way_up.retrofit2
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.example.all_the_way_up.retrofit2.data.User
 
 
-
-class userAdapter(internal var context : Context,internal var userList: List<dataclass>)
+class userAdapter(internal var context : Context,internal var userList: List<User>)
     : RecyclerView.Adapter<usersViewHolder>() {
 
 
@@ -29,8 +27,11 @@ class userAdapter(internal var context : Context,internal var userList: List<dat
         holder.type.text = userList[position].type.toString()
 
         val imagurl = userList[position].avatar_url.toString()
-        // glid it here
 
+
+        holder.hidentext.text = imagurl
+
+        // glid it here
         Glide.with(context)
                 .load(imagurl)
                 .into(holder.image)

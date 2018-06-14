@@ -1,7 +1,7 @@
-package com.example.all_the_way_up.retrofit2
+package com.example.all_the_way_up.retrofit2.data
 
 
-data class dataclass(
+data class User(
         val login: String = "",
         val id: Int = 0,
         val node_id: String = "",
