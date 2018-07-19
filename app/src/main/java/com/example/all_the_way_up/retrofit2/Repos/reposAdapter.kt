@@ -1,12 +1,12 @@
-package com.example.all_the_way_up.retrofit2
+package com.example.all_the_way_up.retrofit2.Repos
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.all_the_way_up.retrofit2.R
 import com.example.all_the_way_up.retrofit2.data.repos
-import kotlinx.android.synthetic.main.activity_user.view.*
 import kotlinx.android.synthetic.main.repo_list_item.view.*
 
 class reposAdapter(val items : List<repos>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
@@ -23,7 +23,7 @@ class reposAdapter(val items : List<repos>, val context: Context) : RecyclerView
 
     // Binds each animal in the ArrayList to a view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder?.rempName?.text = items[position].name.toString()
+        holder.rempName?.text = items[position].name.toString()
     }
 }
 

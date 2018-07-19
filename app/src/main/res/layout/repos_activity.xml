@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".userActivity">
+    tools:context=".Repos.ReposActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -13,7 +13,8 @@
         android:padding="16dp"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/nameView"
@@ -25,7 +26,8 @@
         android:textSize="24dp"
         android:layout_margin="10dp"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:layout_editor_absoluteX="143dp" />
+        tools:layout_editor_absoluteX="143dp"
+        tools:ignore="MissingConstraints" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/repossRecyclerView"
