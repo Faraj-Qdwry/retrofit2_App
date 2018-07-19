@@ -3,7 +3,7 @@ package com.example.all_the_way_up.retrofit2.data
 
 
 
-data class repos(
+data class Repos(
     val id: Int,
     val node_id: String,
     val name: String,

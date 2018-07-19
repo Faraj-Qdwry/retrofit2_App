@@ -1,7 +1,7 @@
 package com.example.all_the_way_up.retrofit2.DataSource
 
 import com.example.all_the_way_up.retrofit2.data.User
-import com.example.all_the_way_up.retrofit2.data.repos
+import com.example.all_the_way_up.retrofit2.data.Repos
 import io.reactivex.Observable
 import retrofit2.Call
 import retrofit2.http.GET
@@ -12,5 +12,5 @@ interface DataSource{
     fun getUsres() : Observable<ArrayList<User>>
 
     @GET("users/{user}/repos")
-    fun listRepos(@Path("user") user: String): Call<ArrayList<repos>>
+    fun listRepos(@Path("user") user: String): Call<ArrayList<Repos>>
 }

@@ -6,14 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.all_the_way_up.retrofit2.R
-import com.example.all_the_way_up.retrofit2.data.repos
+import com.example.all_the_way_up.retrofit2.data.Repos
 import kotlinx.android.synthetic.main.repo_list_item.view.*
 
-class reposAdapter(val items : List<repos>, val context: Context) : RecyclerView.Adapter<ViewHolder>() {
-
+class reposAdapter( val context: Context) : RecyclerView.Adapter<ViewHolder>() {
+    val items = ArrayList<Repos>()
     // Gets the number of animals in the list
     override fun getItemCount(): Int {
         return items.size
+    }
+
+    fun addData(arrayList: ArrayList<Repos>){
+        this.items.addAll(arrayList)
+        notifyDataSetChanged()
     }
 
     // Inflates the item views

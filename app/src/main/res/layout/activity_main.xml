@@ -2,9 +2,10 @@
 <layout>
     <data>
         <variable
-            name="dataList"
-            type="android.databinding.ObservableArrayList"/>
+            name="data"
+            type="android.databinding.ObservableArrayList&lt;com.example.all_the_way_up.retrofit2.data.User&gt;"/>
     </data>
+
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -13,13 +14,12 @@
     android:layout_height="match_parent"
     tools:context=".User.MainActivity">
 
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/usersRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
-        android:adapter="@{dataList}"
+        app:dataUser="@{data}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

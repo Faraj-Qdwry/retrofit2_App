@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.BindingAdapter
 import android.databinding.DataBindingUtil
+import android.databinding.ObservableArrayList
 import android.databinding.ViewDataBinding
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -18,7 +19,7 @@ import com.example.all_the_way_up.retrofit2.data.User
 import kotlinx.android.synthetic.main.user_list_item.view.*
 
 
-class userAdapter(val context: Context): RecyclerView.Adapter<usersViewHolder>() {
+class UsersAdapter(val context: Context): RecyclerView.Adapter<usersViewHolder>() {
 
     var userList : ArrayList<User> = ArrayList()
 
@@ -42,7 +43,10 @@ class userAdapter(val context: Context): RecyclerView.Adapter<usersViewHolder>()
         holder.bind(userList[position])
     }
 
-    fun addData(data: ArrayList<User>) = userList.addAll(data)
+    fun addData(data: ArrayList<User>) {
+        userList.addAll(data)
+        notifyDataSetChanged()
+    }
 
 }
 
@@ -66,24 +70,14 @@ class Handlers (val context: Context){
     }
 }
 
-object ImageBindingAdapter {
-    @JvmStatic
-    @BindingAdapter("android:src")
-    fun setImageUrl(view: ImageView, url: String) {
-        Glide.with(view.context).load(url).into(view)
-    }
+@BindingAdapter("android:src")
+fun ImageView.setImageUrl( url: String){
+    Glide.with(context).load(url).into(this)
 }
 
-object RecyclerViewAdapter {
-    @JvmStatic
-    @BindingAdapter("android:adapter")
-    fun <T> bindItem(recycler: RecyclerView, data: ArrayList<T>) {
-        with(userAdapter(recycler.context)){
-            recycler.adapter = this
-            this.addData(data as ArrayList<User>)
-        }
-    }
+@BindingAdapter("dataUser")
+fun RecyclerView.bindItem(data: ArrayList<User>){
+    (adapter as UsersAdapter).addData(data)
 }
-
 
 

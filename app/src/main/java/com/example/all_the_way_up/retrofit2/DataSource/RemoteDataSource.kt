@@ -1,7 +1,7 @@
 package com.example.all_the_way_up.retrofit2.DataSource
 
 import com.example.all_the_way_up.retrofit2.data.User
-import com.example.all_the_way_up.retrofit2.data.repos
+import com.example.all_the_way_up.retrofit2.data.Repos
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -14,7 +14,7 @@ class RemoteDataSource  : DataSource{
 
     var retrofit = retrofiClinte.instances
 
-    override fun listRepos(user: String): Call<ArrayList<repos>> {
+    override fun listRepos(user: String): Call<ArrayList<Repos>> {
         return retrofit.listRepos("user")
     }
 

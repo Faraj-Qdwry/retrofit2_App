@@ -2,10 +2,10 @@ package com.example.all_the_way_up.retrofit2.data
 
 
 data class User(
-        val login: String = "",
+        var login: String = "",
         val id: Int = 0,
         val node_id: String = "",
-        val avatar_url: String = "",
+        var avatar_url: String = "",
         val gravatar_id: String = "",
         val url: String = "",
         val html_url: String = "",
