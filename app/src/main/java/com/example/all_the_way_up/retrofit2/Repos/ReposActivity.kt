@@ -13,6 +13,7 @@ import com.example.all_the_way_up.retrofit2.DataSource.retrofiClinte
 import com.example.all_the_way_up.retrofit2.data.Repos
 import com.example.all_the_way_up.retrofit2.data.User
 import com.example.all_the_way_up.retrofit2.databinding.ActivityMainBinding
+import com.example.all_the_way_up.retrofit2.databinding.ReposActivityBinding
 import kotlinx.android.synthetic.main.repos_activity.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +26,7 @@ class ReposActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.repos_activity)
-        var mBinder : ViewDataBinding = DataBindingUtil.setContentView(this,R.layout.repos_activity)
+        var mBinder  = DataBindingUtil.setContentView<ReposActivityBinding>(this,R.layout.repos_activity)
 
 
         var user = User()
