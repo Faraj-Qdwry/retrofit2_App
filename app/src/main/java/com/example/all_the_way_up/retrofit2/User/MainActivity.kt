@@ -21,7 +21,6 @@ import com.example.all_the_way_up.retrofit2.databinding.ActivityMainBinding
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var retrofit: DataSource

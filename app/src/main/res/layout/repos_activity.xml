@@ -2,6 +2,9 @@
 <layout>
     <data>
         <variable
+            name="dataRepos"
+            type="android.databinding.ObservableArrayList&lt;com.example.all_the_way_up.retrofit2.data.Repos&gt;"/>
+        <variable
             name="userVar"
             type="com.example.all_the_way_up.retrofit2.data.User"/>
     </data>
@@ -17,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:padding="16dp"
+        android:src="@{userVar.avatar_url}"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
@@ -27,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="TextView"
+        android:text="@{userVar.login}"
         android:textColor="#000"
         android:textSize="24dp"
         android:layout_margin="10dp"
@@ -40,6 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="328dp"
         android:layout_margin="8dp"
+        app:dataRepo="@{dataRepos}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
